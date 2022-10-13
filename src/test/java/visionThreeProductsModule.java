@@ -36,6 +36,7 @@ public class visionThreeProductsModule {
     public void clickingConnectButton() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(Selectors.letConnectButton)).click();
         String titleOfContactUsPage = driver.getTitle();
+        Assert.assertEquals(titleOfContactUsPage, "PRODUCTS - VisionThree");
         System.out.println(titleOfContactUsPage);
     }
 
@@ -46,7 +47,6 @@ public class visionThreeProductsModule {
         for(String handle: windowHandles) {
             System.out.println(handle);
             driver.switchTo().window(handle);
-//            System.out.println(driver.getTitle());
         }
         wait.until(ExpectedConditions.visibilityOfElementLocated(Selectors.nameInput)).sendKeys(name);
         wait.until(ExpectedConditions.visibilityOfElementLocated(Selectors.emailInput)).sendKeys(email);
