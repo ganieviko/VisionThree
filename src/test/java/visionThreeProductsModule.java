@@ -4,6 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -60,9 +61,12 @@ public class visionThreeProductsModule {
 
     @DataProvider(name = "customerData")
     public Object [][]sectionData(){
-        Object[][] data = new Object[][] {
+        return new Object[][] {
                 {"Artur", "arturganievqa@yaho.com", "I would love to join your team", "26"},
         };
-        return data;
+    }
+    @AfterClass
+    public void quitDriver(){
+        driver.quit();
     }
 }
