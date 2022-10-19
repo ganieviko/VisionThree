@@ -10,4 +10,5 @@ public class Selectors {
     public static By submitButton = By.cssSelector("button[type='submit']");
     public static By captcha = By.cssSelector("input[type='text'][size='2']");
     public static By errorMessage = By.cssSelector("div[class='et-pb-contact-message']>ul>li");
+    public static By errorMessageInvalidEmail = By.cssSelector(".et-pb-contact-message>ul>li");
 }

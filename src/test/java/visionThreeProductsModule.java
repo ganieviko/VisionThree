@@ -65,7 +65,7 @@ public class visionThreeProductsModule {
                 {"Artur", "arturganievqa@yaho.com", "I would love to join your team", "26"},
         };
     }
-    @AfterClass
+    @AfterClass(enabled = false)
     public void quitDriver(){
         driver.quit();
     }
