@@ -12,7 +12,8 @@ Feature: Filling up Product Module Page
     Then I see the message <errorMessage>
 
     Examples:
-      | name    | email                 | message       | captcha | errorMessage                             |
-      | "Artur" | "ganieviko@yahoo.com" | "Let me join" | "12"    | "You entered the wrong number in captcha." |
-      | "Artur" | "Nate@yahoo.com"      | "Let me join" | "12"    | "You entered the wrong number in captcha." |
-      | "Artur" | "Greg@yahoo.com"      | "Let me join" | "12"    | "Invalid email"                          |
+      | name      | email                 | message                | captcha | errorMessage                               |
+      | "Artur"   | "ganieviko@yahoo.com" | "Let me join"          | "12"    | "You entered the wrong number in captcha." |
+      | "Maximus" | "Nate@yahoo.com"      | "You company the best" | "12"    | "You entered the wrong number in captcha." |
+      | "Miles"   | "Greg@yahoo.com"      | "Let me be your team"  | "12"    | "Invalid email"                            |
+      | "Chris"   | "Chris@yahoo.com"     | "Let me be your team"  | "12"    | "You entered the wrong number in captcha." |

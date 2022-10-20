@@ -1,12 +1,16 @@
 import io.cucumber.java.*;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
-    WebDriver driver;
-    @After()
-    public void tearDown(Scenario scenario){
-        System.out.println("After Scenario " + scenario.getName() + "!");
-        driver = FillOutForm.driver;
-        driver.quit();
+    @After
+    public void takeScreenShot(Scenario scenario) {
+            byte[] screenshot = ((TakesScreenshot) FillOutForm.driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
     }
+//    @After
+//    public void closeUp(){
+//        FillOutForm.driver.quit();
+//    }
 }
+
